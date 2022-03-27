@@ -2,16 +2,15 @@ import math
 
 # MENU PRINCIPAL
 while True:
-
-    print (12 * "=", " Unidade de Medida ", 12 * "=")
-    print (2 * "\t", "[1]  Milha")
-    print (2 * "\t", "[2]  Polegada")
-    print (2 * "\t", "[3]  Pé")
-    print (2 * "\t", "[4]  Centímetro")
-    print (2 * "\t", "[5]  Metro")
-    print (2 * "\t", "[6]  Quilômetrico")
-    print (2 * "\t", "[0]  Sair")
-    print (50 * "=")
+    print(12 * "=", " Unidade de Medida ", 12 * "=")
+    print(2 * "\t", "[1]  Milha")
+    print(2 * "\t", "[2]  Polegada")
+    print(2 * "\t", "[3]  Pé")
+    print(2 * "\t", "[4]  Centímetro")
+    print(2 * "\t", "[5]  Metro")
+    print(2 * "\t", "[6]  Quilômetrico")
+    print(2 * "\t", "[0]  Sair")
+    print(50 * "=")
 
     opcao = int(input("Digite a categoria desejada: \n"))
 
@@ -23,7 +22,7 @@ while True:
         print(valor, "Milha(s) equivalem a %.3f pé(s)." % (valor * 5280))
         print(valor, "Milha(s) equivalem a %.3f centímetro(s)." % (valor * 160934))
         print(valor, "Milha(s) equivalem a %.3f metro(s)." % (valor * 1609.34))
-        print (valor,"Milha(s) equivalem a %.3f quilômetro(s)." %( valor * 1.60934 ))
+        print(valor, "Milha(s) equivalem a %.3f quilômetro(s)." % (valor * 1.60934))
 
     elif opcao == 2:
         print(12 * "=", "A opção escolhida para converter de POLEGADA(s) para:", 12 * "=")
@@ -57,8 +56,7 @@ while True:
         print(valor, "Centímetro(s) equivalem a %.2f metro(s)." % (valor / 100))
         print(valor, "Centímetro(s) equivalem a %.2f quilômetro(s)." % (valor / 100000))
 
-
-        elif opcao == 5:
+    elif opcao == 5:
         print(12 * "=", "A opção escolhida para converter de METRO(s) para:", 12 * "=")
         valor = float(input("Digite o valor desejado em metro(s): \n"))
         print(valor, "Metro(s) equivalem a %.2f metro(s)." % (valor))
@@ -68,7 +66,7 @@ while True:
         print(valor, "Metro(s) equivalem a %.2f centímetro(s)." % (valor * 100))
         print(valor, "Metro(s) equivalem a %.2f quilômetro(s)." % (valor / 1000))
 
-elif opcao == 6:
+    elif opcao == 6:
         print(12 * "=", "A opção escolhida para converter de KM para:", 12 * "=")
         valor = float(input("Digite o valor desejado em KM: \n"))
         print(valor, "Quilômetro(s) equivalem a %.2f quilômetro(s)." % (valor))
@@ -78,9 +76,9 @@ elif opcao == 6:
         print(valor, "Quilômetro(s) equivalem a %.2f centímetro(s)." % (valor * 100000))
         print(valor, "Quilômetro(s) equivalem a %.2f metro(s)." % (valor * 1000))
 
-elif opcao> 6 or opcao < 0:
-        print (50 * "=")
-        print ("Selecione uma das opções abaixo:")
+    elif opcao > 6 or opcao < 0:
+        print(50 * "=")
+        print("Selecione uma das opções abaixo:")
 
     elif opcao == 0:
         break
