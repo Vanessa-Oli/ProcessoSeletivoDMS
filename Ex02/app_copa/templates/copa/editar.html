@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="theme-color" content="#000000"/>
+
+    <title>COPA</title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% load widget_tweaks %}
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<div class="pccp mt-5 mb-3" align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2390065838671224"
+         data-ad-slot="1441100372"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<main role="main">
+
+    <div class="container text-center mt-5">
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h1 style="font-size: 28px;">COPA</h1>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+
+            <div class="card col-md-2">
+                <h6 class="mt-4"><strong>MENU</strong></h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item active"><a class="activee" href="/index">Campeonatos</a></li>
+                    <li class="list-group-item "><a href="#">Ranking</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-10">
+
+                <div class="table-responsive">
+
+                    <nav aria-label="breadcrumb mb-3">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../">Campeonatos</a></li>
+                            <li class="breadcrumb-item"><a href="#">Editar</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{object.time1}} X
+                                {{object.time2}} </a></li>
+                        </ol>
+                    </nav>
+
+                    <div class="formulario" align="left">
+                        <h4>Editar</h4>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <!-- {{ form.as_p }} -->
+                            <div class="form-group">
+                                <label for="time1" class="txt_negrita">{{ campeonato.time1 }}</label>
+                                {{ form.goltime1|add_class:"form-control" }}
+                                {{ form.time1|add_class:"teste" }}
+                            </div>
+                            <div class="form-group">
+                                <label for="time2" class="txt_negrita">{{ campeonato.time2 }}</label>
+                                {{ form.goltime2|add_class:"form-control" }}
+                                {{ form.time2|add_class:"teste" }}
+                            </div>
+                            <div class="teste">
+                                <label for="local" class="txt_negrita">Local</label>
+                                {{ form.local|add_class:"form-control" }}
+                            </div>
+                            <div class="teste">
+                                <label for="data_hora" class="txt_negrita">Data/Hora</label>
+                                {{ form.data|add_class:"form-control" }}
+                            </div>
+                            <div class="teste">
+                                <label for="data_hora" class="txt_negrita">Data/Hora</label>
+                                {{ form.hora|add_class:"form-control" }}
+                            </div>
+                             <p><span class="txt_negrita">Finalizado:</span> {{ form.finalizado}} </p>
+
+                            <button type="submit" class="btn btn-primary">Confirmar</button>
+                            <a href="../" type="submit" class="btn btn-primary">Voltar</a>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+{% bootstrap_javascript jquery='full' %}
+
+<script type="text/javascript">
+    $('.form-group').html(function (i, t) {
+        return t.replace('Actualmente:', '<span class="ocultar">Actualmente:</span>');
+    });
+
+    $('.form-group').html(function (i, t) {
+        return t.replace('Currently:', '<span class="ocultar">Currently:</span>');
+    });
+</script>
+
+</body>
+</html>
