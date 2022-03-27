@@ -49,9 +49,11 @@ class RankingList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        rankings = []
-        competicoes = Campeonato.objects.all()
+        rankings = {}
+        competicoes = Campeonato.objects.filter(finalizado=True)
         for competicao in competicoes:
-           rankings = {}
-        context['rankings'] = rankings
+           rankings.update({competicao.time1:rankings.get(competicao.time1,0)+competicao.goltime1})
+           rankings.update({competicao.time2:rankings.get(competicao.time2,0)+competicao.goltime2})
+
+        context['rankings'] = {k: rankings[k] for k in sorted(rankings, key=rankings.get, reverse=True)}
         return context
